@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/date.hmtl</title>
+    <style>
+         * {
+             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+         }
+         table {
+             text-align: center;
+            }
+          tr>th {
+              background-color: ivory;
+              color:lightcoral;
+          } 
+          tbody>tr>td:nth-child(7n+1) {
+              background-color: lightpink;
+              color: white;
+          } 
+          tbody>tr>td:nth-child(7n) {
+              background-color: skyblue;
+              color: white;
+          } 
+          /* 
+           td,
+           th {
+               
+           }
+           */
+           
+    </style>
+</head>
+
+<body>
+    <script>
+    
+    showCalender(2021, 10);
+
+    function showCalender (year, month) {
+
+        const titles = ['Sun(일)', 'Mon(월)', 'Tue(화)', 'Wen(수)', 'Thr(목)', 'Fri(금)', 'Sat(토)'];
+
+        let today = new Date(year, month -1, 1); // new Date(); 오늘기준으로 만들어짐 2021, 10, 4 // (2021,9,1)=> 2021년 10월 1일 임.
+        let lastDate = new Date(year, month, 0); //10월 말일.
+        let dayOfMonth = today.getDay();
+       
+        // today.setFullYear(2021, 9, 0); //  (2021,0,1)=> 2021년 1월 1일  마지막 자리에 1 대신 0으로 넣으면 말 일을 알 수 있다.
+        // today.setDate(1);
+        
+
+        // document.write('오늘의 년도' + today.getFullYear() + '<br>');
+        // document.write(today.getMonth() + 1 + '<br>');
+        // document.write(today.getDate() + '<br>');
+        // document.write(today.getDay() + '<br>'); // 0~6 까지 해서 일월화수목금토
+
+        // document.write('이번달의 마지막 날 '+ lastDate.getDate() + '<br>')
+        
+        // 달력 만들기. 
+        document.write(`${year}년 ${month}월 달력`);
+        document.write('<table border="1">');
+        document.write('<tr>');
+              
+                //타이틀 부분.
+            for (let i = 0; i < titles.length; i++) {
+                document.write('<th>' + titles[i] + '</th>');
+            }
+            document.write ('</tr><tr>');
+
+                //빈공란 부분.
+            for(let i =0; i < dayOfMonth; i++) {
+                document.write('<td style="background-color: white"></td>');
+            }
+              //일정보 부분.
+            for (let i = 1; i <= lastDate.getDate(); i++) {
+                document.write('<td>' + i + '</td>');
+                if ((i + dayOfMonth) % 7 == 0) {
+                    document.write('</tr><tr>');
+                }
+            } 
+        document.write('</tr>');
+        document.write('</table>');   
+        }
+    </script>
+</body>
+</html>

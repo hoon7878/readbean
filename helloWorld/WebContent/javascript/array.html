@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/array.html</title>
+</head>
+
+<body> 
+     <form action=""> 
+        <input type="text" id="inputValue" value="test">
+     </form>
+     
+     <p>test</p>
+     <button id="btn" onclick="addArray()">추가하기</button>
+     <button onclick="removeAry()">제거하기</button>
+     <ul id="list">
+     </ul>
+     <script>
+
+        const fruits = ['apple','banana', 'cheery'];
+        const newFruit= fruits.slice(0, 2); //원배열은 변경없이 놔둠.
+
+        console.log(newFruit);
+    
+        
+         const inputAry = [];
+
+        // inputAry[2] = null; //a, b, null, d, e, f 
+        // inputAry.splice(2, 2);   
+
+        function showList() {
+           let ulTag = document.getElementById('list');
+           let tag = '';
+           for(let i=0; i<inputAry.length; i++ ) {
+               tag += '<li>' + inputAry[i] + '</li>';
+           }
+           ulTag.innerHTML = tag;  
+           console.log(inputAry);
+        }
+
+         function removeAry() {
+             //inputAry.pop();
+            // let iValue = input.value;
+            // element의 값을 갖고 오도록.
+            //let iv = document.getElementById('inputValue').value;
+
+            //let iv = document.getElementsByTagName('input')[0].value; //input 태그중에서 [] 몇번째의 input인지 알려주려고 배열사용.
+            let iv = document.querySelector('form>input[type="text"]').value; // 바디안에 폼 태그안에 input이 있다면 자손표시 > 해주고 사용.
+            console.log(iv);
+            for(let i =0; i<inputAry.length; i++){
+                if(inputAry[i] == iv){
+                    inputAry.splice(i, 1,); // 삭제. 이 부분 많이 쓰이니깐 잘 알아두기!.
+                    break;
+                }
+            }
+             showList();
+        
+            // ulTag.innerHTML = tag;
+         }
+
+         function addArray(){
+             let input = document.getElementById('inputValue');
+             let iValue = input.value;
+             // 배열추가.
+            //  inputAry.push(input.value);
+            //  console.log(inputAry);
+             
+             //배열추가.
+             // 0, null, "" => false
+             //20, -9, " 공백잇는거  " => true
+            
+             //비정상적인 처리 => 메세지.
+             if(!iValue) {
+                alert('값을 입력하세요.');
+                return;
+            } 
+                
+            //화면에 추가.
+        //    let ulTag = document.getElementById('list');
+        //    let tag = '';
+        //    for(let i=0; i<inputAry.length; i++ ) {
+        //        tag += '<li>' + inputAry[i] + '</li>';
+               
+           inputAry.unshift(iValue);
+           showList();
+           
+           //ulTag.innerHTML = tag; //<ul><li>test</li><li>hello</li></ul>
+
+            input.value = '';
+            input.focus();
+            //console.log(inputAry);
+        }
+     </script>    
+</body>
+</html>

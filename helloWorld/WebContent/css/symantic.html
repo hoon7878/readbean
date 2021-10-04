@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css/symentic.html</title>
+    <style>
+       
+       * {
+            box-sizing: border-box;
+        }
+        header.outer {
+          background-color: wheat;
+          text-align: center;
+          border: 1px solid gray;
+          border-radius: 3px;
+          margin: 3px;
+          height: 50px;
+          padding-top: 11px;
+        }
+        nav {
+            float: left;
+            width: 20%;
+            height: 250px;
+            border: 1px solid gray;
+            margin: 1%;
+            text-align: center;
+            padding-top: 11px;
+        }
+        aside {
+            float: left;
+            width: 20%;
+            height: 250px;
+            border: 1px solid gray;
+            margin: 1%;
+            text-align: center;
+            padding-top: 11px;
+        }
+        section {
+            float: left;
+            width: 50%;
+            height: 250px;
+            border: 1px solid gray;
+            margin: 1%;
+            text-align: center;
+            padding-top: 11px;
+        }
+          
+         article { 
+            background-color: yellowgreen;
+            border-radius: 3px;
+            border : 1px solid gray;
+            margin: 3%;
+            width: 90%;
+            text-align: center;
+            padding: 5%;
+            height: 40%;
+            padding-top: 11px;
+        }
+       section > header {
+            background-color: yellowgreen;
+            border-radius: 3px;
+            border : 1px solid gray;
+            margin: 3%;
+            width: 90%;
+            text-align: center;
+            padding: 5%;
+            height: 15%;
+            padding-top: 11px;
+        }
+
+        section > footer {
+            background-color: yellowgreen;
+            border-radius: 3px;
+            border : 1px solid gray;
+            margin: 10px;
+            width: 90%;
+            text-align: center;
+            height: 15%;
+            padding-top: 11px;
+        }
+        nav,
+        section,
+        aside {
+            background-color: greenyellow;
+        }
+        footer.outer {
+            clear: both;
+            background-color: wheat;
+            text-align: center;
+            border: 1px solid gray;
+            border-radius: 3px;
+            margin: 3px;
+            height: 50px;
+            padding: 10px;
+            padding-top: 11px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <header class="outer">
+        &lt;header&gt;
+    </header>
+    <nav>
+        &lt;nav&gt;
+    </nav>
+    <section>
+        &lt;section&gt;
+        <header clss="inner">
+            &lt;header&gt;
+         </header>
+         
+        <article>
+            &lt;article&gt;
+        </article>
+         
+        <footer>
+            &lt;footer&gt;
+        </footer>
+    </section>
+    <aside>
+        &lt;aside&gt;
+    </aside>
+    
+    <footer class="outer">
+        &lt;footer&gt;
+    </footer>
+</body>
+</html>

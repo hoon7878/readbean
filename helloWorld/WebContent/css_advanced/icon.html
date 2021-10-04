@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css-advanced/icon.html</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-dash-fill" viewBox="0 0 16 16">
+        <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM6.5 7h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1 0-1z"/>
+      </svg>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+      <style> 
+        div {
+          width: 100px;
+          height: 100px;
+          background-color: red;
+          position: relative;
+          animation: myfirst 5s linear 2s infinite alternate;
+        }
+        
+        @keyframes myfirst {
+          0%   {background-color:red; left:0px; top:0px;}
+          25%  {background-color:yellow; left:200px; top:0px;}
+          50%  {background-color:blue; left:200px; top:200px;}
+          75%  {background-color:green; left:0px; top:200px;}
+          100% {background-color:red; left:0px; top:0px;}
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            transition: width 2s, height 2s, transform 2s;
+           }
+
+        div:hover {
+            width: 300px;
+            height: 300px;
+            transform: rotate(180deg);
+          }
+        </style>
+
+</head>
+
+<body>
+
+    <i class="glyphicon glyphicon-cloud"></i>
+    <i class="glyphicon glyphicon-remove"></i>
+    <i class="glyphicon glyphicon-user"></i>
+    <i class="glyphicon glyphicon-envelope"></i>
+    <i class="glyphicon glyphicon-thumbs-up"></i>
+    <i class="bi bi-cart-dash-fill"></i>
+
+    <i class="material-icons" >cloud</i>
+    <i class="material-icons">favorite</i>
+    <i class="material-icons">attachment</i>
+    <i class="material-icons">computer</i>
+    <i class="material-icons">traffic</i>
+    
+    <h1>CSS Animation</h1>
+
+<p>This example uses the shorthand animation property:</p>
+
+<div></div>
+
+<h1>Transition + Transform</h1>
+
+<p>Hover over the div element below:</p>
+
+<div></div>
+
+</body>
+
+</html>

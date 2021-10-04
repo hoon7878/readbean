@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/array_sort.html</title>
+</head>
+
+<body>
+    <script>
+        const numbers = [30, 25, 4, 100, 10];
+        numbers.sort(function (a, b) {
+            return a - b; // 음수값이 나오면 a요소를 b요소보다 앞에 두겠다. 양수값이 나오면 b 요소를 a요소보다 앞에 두겠다.
+        });
+
+        console.log(numbers);
+
+        const members = [{
+            name: 'Hong',
+            age: 20
+        }, {
+            name: 'Park',
+            age: 22
+        }, {
+            name:'Choi',
+            age:25
+        }
+        ];
+        members.sort(function (a, b) {
+         return a.age - b.age; //음수, 양수
+        // if (a.name < b.name) {
+        //     return -1;
+        // } else {
+        //     return 1;
+        // } // 이름으로도 순서.
+
+        });
+
+        console.log(members);
+
+        const nums = [30, 25, 4, 100, 10]; //순서정렬해보기
+        let temp = -Infinity;
+        for(let j=0; j < nums.length -1; j++)
+        for (let i = 0; i < nums.length -1; i++){
+             if(nums[i]< nums[i + 1]) {
+                temp = nums[i];
+                nums[i] = nums[i + 1];
+                nums[i + 1] = temp;    //배열안에 있는 30과 25 숫자 바꾸는 로직.
+             }
+        }
+        console.log(`nums: ${nums}`);
+        
+    </script>
+    
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/array_iterable2.html</title>
+</head>
+
+<body>
+    <script>
+        const members = [{
+                name:'최선영', 
+                score: 80
+            }, { 
+                name:'윤희성',
+                score: 85
+            }, {
+                name:'김지인',
+                score: 89
+            }, {
+                name:'홍길동',
+                score: 50
+            }];
+            //  mapping, filter, forEach 사용해보기.
+            // 1. mapping 60점 넘으면 pass: pass, fail
+            // 2. filter  60점 넘으면 pass
+            // 3. forEach name, scrore, pass <= 이름, 점수, 합격을 표로 출력. ex) 윤희성, 85, pass 
+            
+            
+           document.write('<table border= "1">'); 
+                document.write('<tr><th>이름</th><th>점수</th><th>합격</th></tr>');
+                 members.map(function (obj, idx, ary) {
+                 const pass = obj.score >= 60 ? 'pass' : 'fail' ;
+                 return {
+                    name: obj.name,
+                    score: obj.score,
+                    pass: pass
+                }
+            }).filter(function (obj, idx, ary) {
+                return obj.pass == 'pass';
+            }).forEach(function (obj, idx, ary) {
+                document.write('<tr>');
+                for(let filed in obj ) {
+                 document.write ('<td>' + obj[filed] + '</td>');
+                }
+                 document.write('</tr>');
+            })
+
+            document.write('</table>');
+
+            
+        
+    </script>
+</body>
+</html>

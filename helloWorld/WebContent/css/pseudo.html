@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css/pseudo.html</title>
+    <style>
+        a{
+            font-family: 'Courier New', Courier, monospace;
+            display: block;
+            width: 200px;
+            border: 2px solid red;
+        }
+
+        a:link { color: blue; text-decoration: underline;}
+        a:visited { color: red; font-weight: bolder;}
+        a:hover { text-decoration: overline;}
+        a:active { font-weight: bolder; background-color: yellow;}
+        
+        div.d1 { border: 1px dashed red; width: 400px; padding: 5px; }
+        div.d1:hover {background-color: yellow; 
+                      width: 300px;
+                      transition: all 1.5 linear 0.5s;}
+       
+        div.d2 {border: 1px dashed green; width: 400px; padding: 5px;}
+        div.d2:hover {background-color: green;}
+    </style>
+</head>
+<body>
+    <h2>Pseudo Class</h2>
+    <p><a href="http://www.w3.org">W3C 사이트입니다.</a> : 마우스 이벤트에 따른 
+    링크의 변화를 잘 보세요.
+    <a href="http://www.daum.net">다음 사이트입니다.</a>
+    </p>
+
+    <div class= "d1">
+        <h3>가상1 클래스</h3>
+        마우스 위치에 따른 박스의 스타일 변화를 보세요.
+    </div>
+    <div class="d2">
+         <h3>가상2 클래스</h3>
+         마우스 위치에 따른 박스의 스타일 변화를 보세요.
+    </div>
+</body>
+</html>
