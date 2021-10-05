@@ -39,7 +39,8 @@
 
         document.write('<ul>');
              
-            employees.forEach(function(obj, idx, ary) {
+            employees.forEach(function(obj, idx, ary) {  //for.Each는 배열에서 하나씩 가지고 와서 쓰겠다는 명령어. 
+                                                         // obj, idx, ary는 그 배열안에서 오브젝트,인덱스,배열 자체를 쓰겠다는 거.
                 document.write('<li onmouseout="mOut(event)" onmouseover="mOver(event)">' + obj.firstName + '-' + obj.lastName + '<button onclick="clickFnc(event)">삭제</button>' +'</li>');
             });
         
