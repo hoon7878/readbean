@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/this.html</title>
+</head>
+
+<body>
+    <button id='btn'>click</button>
+
+   <script>
+        // "use strict";
+
+       const person = {
+           fisrtName : '길동',
+           lastName : '홍',
+           age : 20,
+           fullName : function() {
+              return this.fisrtName + ' - ' + this.lastName; // object : this(object) 오브젝트 안에 있는 디스는 오브젝트를 가리킨다.
+           }
+       }
+       console.log(person.fullName());
+
+       function myFnc(){
+        console.log(this); // 함수안에서의 this도 윈도우를 가리킨다.
+       }
+       console.log(this); // 오브젝트 중에서도 최상위 오브젝트인 윈도우를 가리킨다.
+       myFnc();
+
+     let btn = document.getElementById('btn');
+     btn.onclick = function () {
+        
+        console.log(this);
+     }
+    //  console.log(btn);
+    // this라는 키워드 잘 알아두기.
+   </script>    
+</body>
+</html>

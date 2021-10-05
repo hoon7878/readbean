@@ -10,6 +10,10 @@
 <body>
     
    <script>
+    // global scope : global var
+    // function scope : local var
+    // ES6(2015) block scope : let , const
+
        let rawData = `[{"id":1,"first_name":"Shirleen","last_name":"Novik","email":"snovik0@theguardian.com","gender":"Male","ip_address":"195.72.15.222"},
 {"id":2,"first_name":"Anastassia","last_name":"Heap","email":"aheap1@reddit.com","gender":"Female","ip_address":"249.5.56.110"},
 {"id":3,"first_name":"Standford","last_name":"Luckcuck","email":"sluckcuck2@slate.com","gender":"Female","ip_address":"119.116.101.203"},
@@ -28,7 +32,32 @@
 
 // rawData => Object
     let data = JSON.parse(rawData);  // data는 배열이다.
-    const employees = data.employees;
+    
+    document.write('<ul>');
+        
+        let emp = obj.emps;
+
+    // function clickFnc(e) {                                           
+    //     let btn = e.target ;                                         
+    //     btn.parentNode.parentNode.remove() ;                         
+    // }                                                                
+                                                                     
+    // document.write("<table border=1>") ;                             
+    // document.write("<thead><tr><th colspan='7'>list</th></th>") ;  
+    // let key = Object.keys(data[0]) ;                                 
+    // document.write("<tr></tr>") ;                                    
+    // for (let i = 0 ; i < key.length ; i++) {                         
+    //     document.write("<td>" + key[i] + "</td>") ;
+    // }
+    // document.write("<td>button</td>") ;                              
+    // document.write("<tr></tr>") ;
+    // for (let field of data) {                                        
+    //     document.write("<tr></tr>") ;
+    //     for (let d in field) {                                       
+    //     document.write("<td>" + field[d] + "</td>") ;                
+    //     }                                                            
+    //     document.write("<td><button onclick='clickFnc(event)'>삭제</button></td>") ;
+    // }
     
 
     console.log(data[0].id);
