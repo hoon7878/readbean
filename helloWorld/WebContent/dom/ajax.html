@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom/ajax.html</title>
+</head>
+
+<body>
+      <h2>Ajax 처리.</h2>
+      <div id="show"></div>
+      <script>
+          // 서버로 get.json
+        let xhtp = new XMLHttpRequest(); 
+        xhtp.onreadystatechange = function () {
+            console.log(xhtp.readyState + ', ' + xhtp.status);
+            if(xhtp.readyState == 4 && xhtp.status == 200) {  
+               // console.log(xhtp.responseText);
+               let data = JSON.parse(xhtp.responseText);
+               // console.log(data);
+               createPage(data);
+            } else {
+                console.error('sever 처리중 에러발생.');
+            }
+        }
+        xhtp.open('get', 'get.json');  // 'sample.txt'  과 'dom.html' 파일도 읽어 올 수 있다.
+        xhtp.send();
+
+        // 가져온 data를 가지고 function으로 처리.
+        function createPage(ary) {
+
+            // console.log(ary[0]); // 콘솔에서 ary[0] 값을 알아보기 위해 사용.  //{id:?, first_name:?, last_name:? ....}
+             let table, tr, td, txt;
+             table = document.createElement('table');
+             table.setAttribute('border', '1');
+
+             tr = document.createElement('tr');
+             table.appendChild(tr); //<table><tr></tr></table>
+             // 타이틀 생성.
+             for (let field in ary[0]) {
+                    td = document.createElement('th');
+                    txt = document.createTextNode(field.toUpperCase().replace('_',' '));
+                    td.appendChild(txt); //<th>id</th><th>first_name</th>
+
+                    tr.appendChild(td);
+             }
+             // 데이터 생성.
+             // for(let i = 0; i < ary.length; i++){ 
+             for (let obj of ary) {
+                 tr = document.createElement('tr');
+                 table.appendChild(tr);
+                 for (let field in ary[0]) {
+                    td = document.createElement('td');
+                    txt = document.createTextNode(obj[field]); // (obj[field]) 대신 위에 포문을 이용하면 (ary[i][field])
+                    td.appendChild(txt); 
+
+                    tr.appendChild(td);
+               }
+             }
+             document.getElementById('show').appendChild(table);
+        }
+      </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
