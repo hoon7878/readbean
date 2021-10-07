@@ -5,6 +5,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmpDAO extends DAO {
+	
+	
+	  public boolean checkId(String id) {
+	      
+	      connect();
+	      String sql = "SELECT * FROM empl_demo where employee_id = ?";
+	      try {
+	         psmt = conn.prepareStatement(sql);
+	         psmt.setString(1, id);
+	         rs = psmt.executeQuery();
+	         
+	         if ( rs.next()) {
+	            return false;
+	         } else {
+	            return true;
+	         }
+	         
+	      } catch (SQLException e) {
+	         e.printStackTrace();
+	      } finally {
+	         disconnect();
+	      }
+	      return false;
+	   }
  
 	public List<Employee> getEmpList () {
 		connect();
@@ -33,6 +57,24 @@ public class EmpDAO extends DAO {
 		}
 		
 		return list;
+	}
+	 //employeeList 데이터 삭제.
+	public int deleteEmployee(String empId) {
+		connect();
+		String sql = "delete from empl_demo where employee_id = " + empId ;
+		try {
+			stmt = conn.createStatement();
+			int r = stmt.executeUpdate(sql);
+			System.out.println(r + "건 삭제됨.");
+			return Integer.parseInt(empId);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			
+		} finally {
+			disconnect();
+		}
+		 return -1;
 	}
 	
 	
@@ -72,7 +114,7 @@ public class EmpDAO extends DAO {
 		
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			disconnect();
 		}
 	}
@@ -86,8 +128,9 @@ public class EmpDAO extends DAO {
 		   System.out.println(r + "건 삭제됨.");
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			disconnect();
 		}
 	}
+	
 }
