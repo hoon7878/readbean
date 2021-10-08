@@ -16,7 +16,7 @@
             text-align: left;
             border: 1px;
             margin: 3px;
-            height: 90px;
+            height: 80%;
             padding: 11px;
 
 
@@ -25,12 +25,12 @@
         section {
             background-color: white;
             float: left;
-            width: 85%;
-            height: 450px;
+            width: 75%;
+            height: 75%;
             border: 1px solid gray;
             margin: 1%;
             text-align: left;
-            padding-top: 11px;
+            padding: 20px;
 
         }
 
@@ -51,7 +51,7 @@
             border: 1px solid gray;
             margin: 1%;
             text-align: left;
-            padding-top: 11px;
+            padding: 20px;
 
         }
 
@@ -59,48 +59,33 @@
             clear: both;
             background-color: white;
             text-align: left;
-            border: 1px solid gray;
+            border: 1px solid lightslategrey;
             border-radius: 3px;
             margin: 3px;
-            height: 80px;
-            padding: 10px;
-            padding-top: 11px;
-
+            height: 80%;
+            padding: 20px;
+            
         }
-
-        #customers {
-            font-family: Arial, Helvetica, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        #customers td,
-        #customers th {
-            border: 1px solid #ddd;
-            padding: 8px;
-        }
-
-        #customers tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        #customers tr:hover {
-            background-color: #ddd;
-        }
-
-        #customers th {
-            padding-top: 12px;
-            padding-bottom: 12px;
-            text-align: left;
-            background-color: #04AA6D;
+         
+        tr.tr1 {
+            background-color: blue;
             color: white;
+        }
+        tr.tr2{
+            background-color: skyblue;
+        }
+        tr.tr3{
+            background-color: steelblue;
+        }
+        table{
+            width: 98%;
         }
     </style>
 </head>
 
 <body>
     <header class="outer">
-        ONLINE SSAFY <br>
+       <h2>  ONLINE SSAFY </h2> <br>
         <br>
         <a href="">메뉴1</a>
         <a href="">메뉴2</a>
@@ -108,7 +93,7 @@
         <a href="">메뉴4</a>
     </header>
     <section>
-        <p>기사 1</p>
+        <h3> <p>기사 1</p></h3>
         <article class="article1">
 
 
@@ -122,40 +107,40 @@
                 있도록 하였습니다.
             </p>
         </article>
-        <p>기사 2</p>
+        <h3><p>기사 2</p></h3>
         <article class="article2">
             <table border="1">
-                <tr>
+                <tr class="tr1">
                     <th>번호</th>
                     <th>제목</th>
                     <th>작성자</th>
                 </tr>
-                <tr>
+                <tr class="tr2">
                     <td>1</td>
                     <td>Make Insert date time customizable.</td>
                     <td>강감찬</td>
                 </tr>
-                <tr>
+                <tr class="tr3">
                     <td>2</td>
                     <td>Make date time order reversible for short</td>
                     <td>장영실</td>
                 </tr>
-                <tr>
+                <tr class="tr2">
                     <td>3</td>
                     <td>Add Insert Date/Time commands shortcut</td>
                     <td>안중근</td>
                 </tr>
-                <tr>
+                <tr class="tr3">
                     <td>4</td>
                     <td>Fix regreession: no error message when locked</td>
                     <td>김두한</td>
                 </tr>
-                <tr>
+                <tr class="tr2">
                     <td>5</td>
                     <td>Make"Confirm Save All" dialog more clear:</td>
                     <td>계백</td>
                 </tr>
-                <tr>
+                <tr class="tr3">
                     <td>6</td>
                     <td>Improve JSON,PHP,PYHON,CSS,BANNC and</td>
                     <td>최무선</td>
@@ -166,12 +151,12 @@
 
     </section>
     <aside>
-        SIDEBAR
+        <h3>SIDEBAR</h3>
         <p>모든 국민은 근로의 의무를 진다. 국가는 근로의 의무의 내용과 조건을 민주주의원칙에 따라 법률로 정한다.</p>
     </aside>
 
     <footer class="outer">
-        Footer
+        <h3>Footer</h3>
         <p>이 헌법시행 당시의 법령과 조약은 이 헌법에 위배되지 아니하는 한 그 효력을 지속한다.</p>
     </footer>
 
